@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Social manager</title>
+</head>
+
+<body>
+	<div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+	</div>
+</body>
+
+<!-- Load Facebook API -->
+<script>
+	window.fbAsyncInit = function () {
+		FB.init({
+			appId: '136387987064958',
+			autoLogAppEvents: true,
+			xfbml: true,
+			version: 'v2.11'
+		});
+	};
+
+	(function (d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) { return; }
+		js = d.createElement(s); js.id = id;
+		js.src = "https://connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<script src="./js/index.js"></script>
+
+</html>
