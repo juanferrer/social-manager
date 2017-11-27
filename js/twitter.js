@@ -11,9 +11,11 @@ class Twitter {
 	 */
 	login() {
 		$.ajax({
-			url: "http://diabolic-straps/social-manager/twitter.php"
+			url: "https://diabolic-straps.000webhostapp.com/social-manager/twitter.php",
+			data: { action: "login" },
+			type: "POST"
 		}).done(function (r) {
-			console.log(r);
+			window.location.href = r;
 		});
 	}
 
