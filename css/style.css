@@ -1,0 +1,54 @@
+:root {
+	--main-color: #000;
+	--highlight-color: #00F;
+}
+
+.main-screen {
+	max-width: 800px;
+	max-height: 600px;
+	width: 80vw;
+	height: 50vh;
+	min-width: 400px;
+	min-height: 300px;
+	border-radius: 5px;
+	background-color:rgb(225, 232, 238);
+}
+
+#outer-container {
+	max-width: 800px;
+	width: 80vw;
+	min-width: 400px;
+	height: 200px;
+	padding: 0;
+}
+
+.inner-container {
+	position: absolute;
+}
+
+.social-network-image {
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+	border-style: solid;
+	border-width: 2px;
+	border-color: transparent;
+	transition: all 0.2s ease-in-out;
+}
+
+.social-network-image:hover {
+	border-color: var(--highlight-color);
+}
+
+.social-network-state {
+	width: 100px;
+	height: 100px;
+}
+
+.login-button-container {
+	height: 150px;
+}
+
+.screen-change-button {
+
+}
