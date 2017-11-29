@@ -12,6 +12,9 @@
 	min-height: 300px;
 	border-radius: 5px;
 	background-color:rgb(225, 232, 238);
+
+	/* This allows the inner elements to have absolute positions relative to this element*/
+	position: relative;
 }
 
 #outer-container {
@@ -50,5 +53,13 @@
 }
 
 .screen-change-button {
+	position: absolute;
+}
 
+#right-button {
+	right: 10px;
+}
+
+#left-button {
+	left: 10px;
 }

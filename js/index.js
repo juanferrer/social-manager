@@ -7,6 +7,18 @@ feather.replace();
 $("#login-screen").parent().show();
 $("#publish-screen").parent().hide();
 
+/* Event handlers */
+
+$("#right-button").click(() => {
+	changeScreen();
+});
+
+$("#left-button").click(() => {
+	changeScreen();
+});
+
+/* Functions */
+
 function changeScreen() {
 	$("#login-screen").parent().toggle();
 	$("#publish-screen").parent().toggle();
