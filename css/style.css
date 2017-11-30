@@ -3,30 +3,6 @@
 	--highlight-color: #00F;
 }
 
-.main-screen {
-	max-width: 800px;
-	max-height: 600px;
-	width: 80vw;
-	height: 50vh;
-	min-width: 400px;
-	min-height: 300px;
-	border-radius: 5px;
-	background-color:rgb(225, 232, 238);
-
-	/* This allows the inner elements to have absolute positions relative to this element*/
-	position: relative;
-
-	transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-#login-screen {
-	z-index: 1;
-}
-
-#publish-screen {
-	z-index: 0;
-}
-
 #outer-container {
 	max-width: 800px;
 	width: 80vw;
@@ -39,9 +15,34 @@
 	position: absolute;
 }
 
+.main-screen {
+	max-width: 800px;
+	max-height: 600px;
+	width: 80vw;
+	height: 50vh;
+	min-width: 400px;
+	min-height: 300px;
+	border-radius: 5px;
+	background-color:rgb(225, 232, 238);
+	padding: 45px;
+
+	/* This allows the inner elements to have absolute positions relative to this element*/
+	position: relative;
+
+	transition: all 0.3s ease-in-out;
+}
+
+#login-screen {
+	z-index: 1;
+}
+
+#publish-screen {
+	z-index: 0;
+}
+
 .social-network-image {
-	width: 50px;
-	height: 50px;
+	width: 100px;
+	height: 100px;
 	border-radius: 5px;
 	border-style: solid;
 	border-width: 2px;
@@ -64,6 +65,7 @@
 
 .screen-change-button {
 	position: absolute;
+	z-index: 2;
 }
 
 #right-button {
@@ -72,4 +74,24 @@
 
 #left-button {
 	left: 10px;
+}
+
+#publish-textarea {
+	width: 100%;
+	max-height: 200px;
+	height: 30vh;
+	min-height: 150px;
+
+	resize: none;
+
+	border-radius: 5px;
+	border-width: 2px;
+
+	color: #4e4e4e;
+	padding: 10px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+#network-checkbox-container {
+	padding: 0;
 }

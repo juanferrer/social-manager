@@ -15,6 +15,18 @@ $("#left-button").click(() => {
 	changeScreen();
 });
 
+$("#facebook-button").click(() => {
+	facebook.login();
+});
+
+$("#twitter-button").click(() => {
+
+});
+
+$("#instagram-button").click(() => {
+
+});
+
 /* Functions */
 
 function changeScreen() {

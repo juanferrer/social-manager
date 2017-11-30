@@ -4,6 +4,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Social manager</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu:500" rel="stylesheet">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
 	 crossorigin="anonymous">
 	<link rel="stylesheet" href="./css/style.css">
@@ -31,8 +34,38 @@
 
 			</div>
 			<div class="inner-container" style="z-index: 0;">
-				<div id="publish-screen" class="container-fluid d-flex align-items-center justify-content-around main-screen">
+				<div id="publish-screen" class="container-fluid d-flex flex-column align-items-center justify-content-around main-screen">
 					<i data-feather="chevron-left" id="left-button" class="screen-change-button"></i>
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<textarea id="publish-textarea"></textarea>
+							</div>
+							<div class="col-3">
+								<div id="network-checkbox-container" class="container d-flex flex-column align-items-start justify-content-around">
+									<div class="form-check">
+										<label class="form-check-label">
+											<input class="form-check-input" type="checkbox" value="">Facebook
+										</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input class="form-check-input" type="checkbox" value=""> Twitter
+										</label>
+									</div>
+									<div class="form-check">
+										<label class="form-check-label">
+											<input class="form-check-input" type="checkbox" value=""> Instagram
+										</label>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div id="button-area" class="container-fluid d-flex align-items-end justify-content-end">
+						<input type="button" id="publish-button" class="btn btn-primary" value="Publish">
+					</div>
 				</div>
 
 			</div>
