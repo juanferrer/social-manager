@@ -12,7 +12,7 @@
 <body>
 	<div id="background" class="container-fluid d-flex align-items-center justify-content-around" style="height: 100vh; background-color: aliceblue;">
 		<div id="outer-container" class="container-fluid d-flex align-items-center justify-content-between">
-			<div class="inner-container">
+			<div class="inner-container" style="z-index: 1;">
 				<div id="login-screen" class="container-fluid d-flex align-items-center justify-content-around main-screen">
 					<div class="d-flex flex-column align-items-center justify-content-around login-button-container">
 						<img id="facebook-button" src="./img/networks/facebook.svg" alt="Facebook login" class="social-network-image">
@@ -30,7 +30,7 @@
 				</div>
 
 			</div>
-			<div class="inner-container">
+			<div class="inner-container" style="z-index: 0;">
 				<div id="publish-screen" class="container-fluid d-flex align-items-center justify-content-around main-screen">
 					<i data-feather="chevron-left" id="left-button" class="screen-change-button"></i>
 				</div>
