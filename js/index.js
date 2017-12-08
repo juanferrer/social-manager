@@ -5,6 +5,9 @@ var twitter = new Twitter();
 
 feather.replace();
 
+if (document.referrer == "https://api.twitter.com/oauth/authorize") {
+}
+
 /* Event handlers */
 
 $("#right-button").click(() => {
@@ -20,7 +23,7 @@ $("#facebook-button").click(() => {
 });
 
 $("#twitter-button").click(() => {
-
+	twitter.login();
 });
 
 $("#instagram-button").click(() => {

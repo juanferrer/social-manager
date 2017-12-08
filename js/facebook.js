@@ -6,24 +6,6 @@ class Facebook {
 		this.accessToken = "";
 	}
 
-	/**
-	 * Trigger facebook login
-	 */
-	/*login() {
-		FB.getLoginStatus(function (response) {
-			if (response.status === "connected") {
-				console.log("Logged in");
-				loginCallback(response);
-			}
-			else {
-				FB.login(loginCallback, {
-					scope: "publish_actions",
-					return_scopes: true
-				});
-			}
-		});
-	}*/
-
 	login(callback) {
 		FB.getLoginStatus(response => {
 			if (response.status === "connected") {

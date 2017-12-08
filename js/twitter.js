@@ -7,7 +7,7 @@ class Twitter {
 	}
 
 	/**
-	 * Trigger facebook login
+	 * Trigger Twitter login
 	 */
 	login() {
 		$.ajax({
@@ -15,12 +15,15 @@ class Twitter {
 			data: { action: "login" },
 			type: "POST"
 		}).done(function (r) {
-			window.location.href = r;
+			var loginWindow = window.open("", "", "width=550, height=615");
+			loginWindow.
+			loginWindow.location.href = r;
+			//window.location.href = r;
 		});
 	}
 
 	/**
-	 * Trigger facebook logout
+	 * Trigger Twitter logout
 	 */
 	logout() {
 	}
@@ -31,12 +34,4 @@ class Twitter {
 	 */
 	post(postContent) {
 	}
-}
-
-
-/**
- * What to do when the login response comes back
- * @param {*} response
- */
-function loginCallback(response) {
 }
