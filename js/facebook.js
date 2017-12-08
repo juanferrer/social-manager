@@ -56,7 +56,7 @@ class Facebook {
 	 * @param {post.js/post} postContent
 	 */
 	post() {
-		FB.api(`/${this.userId}/feed`, "post", { message: $("#publish-textarea").val(), access_token: this.accessToken });
+		FB.api(`/${facebook.userId}/feed`, "post", { message: $("#publish-textarea").val(), access_token: facebook.accessToken });
 	}
 }
 
