@@ -27,6 +27,10 @@ $("#instagram-button").click(() => {
 
 });
 
+$("#publish-button").click(() => {
+	post($("#publish-textarea").val());
+});
+
 /* Functions */
 
 function changeScreen() {
