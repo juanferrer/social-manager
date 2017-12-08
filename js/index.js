@@ -28,7 +28,7 @@ $("#instagram-button").click(() => {
 });
 
 $("#publish-button").click(() => {
-	post($("#publish-textarea").val());
+	post();
 });
 
 /* Functions */
@@ -58,7 +58,6 @@ function changeScreen() {
 	}, 300, toLogin);
 }
 
-function post(postContent) {
-	facebook.login();
-	facebook.post(postContent);
+function post() {
+	facebook.login(facebook.post);
 }

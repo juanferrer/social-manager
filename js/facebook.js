@@ -1,4 +1,4 @@
-/* globals FB, facebook */
+/* globals FB, facebook , $*/
 
 class Facebook {
 	constructor() {
@@ -9,13 +9,32 @@ class Facebook {
 	/**
 	 * Trigger facebook login
 	 */
-	login() {
+	/*login() {
 		FB.getLoginStatus(function (response) {
 			if (response.status === "connected") {
 				console.log("Logged in");
+				loginCallback(response);
 			}
 			else {
 				FB.login(loginCallback, {
+					scope: "publish_actions",
+					return_scopes: true
+				});
+			}
+		});
+	}*/
+
+	login(callback) {
+		FB.getLoginStatus(response => {
+			if (response.status === "connected") {
+				if (callback) callback(response);
+				else loginCallback(response);
+			}
+			else {
+				FB.login(response => {
+					loginCallback(response);
+					if (callback) callback(response);
+				}, {
 					scope: "publish_actions",
 					return_scopes: true
 				});
@@ -36,8 +55,8 @@ class Facebook {
 	 * Format and post message
 	 * @param {post.js/post} postContent
 	 */
-	post(postContent) {
-		FB.api(`/${this.userId}/feed`, "post", { message: postContent.message, access_token: this.accessToken });
+	post() {
+		FB.api(`/${this.userId}/feed`, "post", { message: $("#publish-textarea").val(), access_token: this.accessToken });
 	}
 }
 
