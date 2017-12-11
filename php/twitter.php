@@ -41,17 +41,15 @@ if (!empty($_POST['action'])) {
     mysqli_query($link,
         'UPDATE oauth_tokens SET oauth_verifier=' . $_GET['oauth_verifier'] . ' WHERE oauth_token=' . $_GET['oauth_token']);
 
-    login($oauth['id']);
+    //ogin($oauth['id']);
+    print_r($_GET['oauth_token']);
 }
 
 function login($id)
 {
     global $CONSUMER_KEY, $CONSUMER_SECRET, $OAUTH_CALLBACK;
 
-    $link = mysqli_connect('localhost', 'id2777537_social_manager', 'm794ja!2Y5C!', 'id2777537_twitter_logins');
-    if (!$link) {
-        die('Server error');
-    }
+    $link = mysqli_connect('localhost', 'id2777537_social_manager', 'm794ja!2Y5C!', 'id2777537_twitter_logins') or die("Error");
 
     $oauth = [];
 
@@ -64,12 +62,13 @@ function login($id)
     if (empty($oauth['oauth_token'])) {
         $connection = new TwitterOAuth($CONSUMER_KEY, $CONSUMER_SECRET);
         $temporary_credentials = $connection->oauth('oauth/request_token', array('oauth_callback' => $OAUTH_CALLBACK));
-        mysqli_query($link,
-            'INSERT INTO oauth_tokens (id, oauth_token, oauth_token_secret, oauth_verifier) VALUES(' .
+        $sql = 'INSERT INTO oauth_tokens (id, oauth_token, oauth_token_secret) VALUES(' .
             $id . ', ' .
             $temporary_credentials['oauth_token'] . ', ' .
-            $temporary_credentials['oauth_token_secret'] . ')');
-
+            $temporary_credentials['oauth_token_secret'] . ')';
+        if (!mysqli_query($link, $sql)) {
+            echo ("Error " . mysqli_connect_errno());
+        }
         $url = $connection->url('oauth/authorize', array('oauth_token' => $temporary_credentials['oauth_token']));
 
         print_r($url);
