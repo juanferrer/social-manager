@@ -4,14 +4,17 @@ var facebook = new Facebook();
 var twitter = new Twitter();
 var fingerprint = "";
 
-updateLoginButtons();
-
 feather.replace();
 new Fingerprint2().get(function (result) {
 	fingerprint = result;
 });
 
-
+var facebookWaiter = setInterval(() => {
+	if (FB) {
+		updateLoginButtons();
+		clearInterval(facebookWaiter);
+	}
+}, 500);
 
 /* Event handlers */
 

@@ -42,6 +42,8 @@ class Facebook {
 		FB.getLoginStatus(response => {
 			if (response.status === "connected") {
 				$("#facebook-status-check").attr("src", "./img/status/check.svg");
+			} else if (response.status === "unknown") {
+				facebook.login(facebook.updateCheckStatus);
 			}
 		});
 	}
