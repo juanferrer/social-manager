@@ -57,4 +57,5 @@ class Facebook {
 function loginCallback(response) {
 	facebook.userId = response.authResponse.userID || "";
 	facebook.accessToken = response.authResponse.accessToken || "";
+	facebook.updateCheckStatus();
 }
