@@ -70,8 +70,12 @@ function changeScreen() {
 }
 
 function post() {
-	facebook.login(facebook.post);
-	twitter.post();
+	if ($("#facebook-check-box")[0].checked) {
+		facebook.login(facebook.post);
+	}
+	if ($("#twitter-check-box")[0].checked) {
+		twitter.post();
+	}
 }
 
 function getFingerprint() {
