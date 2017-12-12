@@ -4,10 +4,14 @@ var facebook = new Facebook();
 var twitter = new Twitter();
 var fingerprint = "";
 
+updateLoginButtons();
+
 feather.replace();
 new Fingerprint2().get(function (result) {
 	fingerprint = result;
 });
+
+
 
 /* Event handlers */
 
@@ -69,4 +73,18 @@ function post() {
 
 function getFingerprint() {
 	return fingerprint;
+}
+
+function updateLoginButtons() {
+	var facebookStatus = $("#facebook-status-check");
+	var twitterStatus = $("#twitter-status-check");
+	var instagramStatus = $("#instagram-status-check");
+
+	var x = "./img/status/x.svg",
+		check = "./img/status/check.svg";
+
+	facebook.login();
+	facebookStatus.attr("src", check);
+
+	if (localStorage.getItem("twitterID")) twitterStatus.attr("src", check);
 }
