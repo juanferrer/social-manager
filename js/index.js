@@ -69,6 +69,16 @@ function changeScreen() {
 	}, 300, toLogin);
 }
 
+function postAnimation() {
+	$("#publish-screen").addClass("trigger-publish-animation");
+	setTimeout(() => {
+		$("#publish-textarea").val("");
+		setTimeout(() => {
+			$("#publish-screen").removeClass("trigger-publish-animation");
+		}, 400);
+	}, 400);
+}
+
 function post() {
 	if ($("#facebook-check-box")[0].checked) {
 		facebook.login(facebook.post);
@@ -76,6 +86,7 @@ function post() {
 	if ($("#twitter-check-box")[0].checked) {
 		twitter.post();
 	}
+	postAnimation();
 }
 
 function getFingerprint() {

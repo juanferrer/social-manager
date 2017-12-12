@@ -3,6 +3,10 @@
 	--highlight-color: #00F;
 }
 
+body {
+	overflow: hidden;
+}
+
 #outer-container {
 	max-width: 800px;
 	width: 80vw;
@@ -85,6 +89,30 @@
 	color: #4e4e4e;
 	padding: 10px;
 	font-family: 'Ubuntu', sans-serif;
+}
+
+@keyframes publish-animation {
+	0% {
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		transform: scale(0.8);
+		opacity: 0;
+	}
+	51% {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.trigger-publish-animation {
+	animation-name: publish-animation;
+	animation-duration: 0.8s;
 }
 
 #network-checkbox-container {
