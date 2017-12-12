@@ -16,10 +16,7 @@ class Facebook {
 				FB.login(response => {
 					loginCallback(response);
 					if (callback) callback(response);
-				}, {
-					scope: "publish_actions",
-					return_scopes: true
-				});
+				}, { scope: "publish_actions", return_scopes: true });
 			}
 		});
 	}
@@ -48,7 +45,6 @@ class Facebook {
  * @param {*} response
  */
 function loginCallback(response) {
-	console.log(response);
 	facebook.userId = response.authResponse.userID || "";
 	facebook.accessToken = response.authResponse.accessToken || "";
 }

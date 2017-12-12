@@ -1,4 +1,4 @@
-/* globals $, twitter*/
+/* globals $, getFingerprint*/
 
 class Twitter {
 	constructor() {
@@ -10,11 +10,14 @@ class Twitter {
 	 * Trigger Twitter login
 	 */
 	login() {
+		var twitterID = localStorage.getItem("twitterID") || getFingerprint();
+
 		$.ajax({
 			url: "https://diabolic-straps.000webhostapp.com/social-manager/twitter.php",
-			data: { action: "login", id: "SOMETHING" },
+			data: { action: "login", id: twitterID },
 			type: "POST"
 		}).done(function (r) {
+			localStorage.setItem("twitterID", twitterID);
 			window.location.href = r;
 		});
 	}
@@ -23,6 +26,7 @@ class Twitter {
 	 * Trigger Twitter logout
 	 */
 	logout() {
+		localStorage.removeItem("twitterID");
 	}
 
 	/**
@@ -32,7 +36,7 @@ class Twitter {
 	post() {
 		$.ajax({
 			url: "https://diabolic-straps.000webhostapp.com/social-manager/twitter.php",
-			data: { action: "post", id: "SOMETHING", message: $("#publish-textarea").val() },
+			data: { action: "post", id: localStorage.getItem("twitterID"), message: $("#publish-textarea").val() },
 			type: "POST"
 		}).done(function (r) {
 			console.log(r);

@@ -1,9 +1,13 @@
-/* globals $, feather, Facebook, Twitter */
+/* globals $, feather, Facebook, Twitter, Fingerprint2*/
 
 var facebook = new Facebook();
 var twitter = new Twitter();
+var fingerprint = "";
 
 feather.replace();
+new Fingerprint2().get(function (result) {
+	fingerprint = result;
+});
 
 /* Event handlers */
 
@@ -61,4 +65,8 @@ function changeScreen() {
 function post() {
 	facebook.login(facebook.post);
 	twitter.post();
+}
+
+function getFingerprint() {
+	return fingerprint;
 }
