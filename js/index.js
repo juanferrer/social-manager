@@ -76,15 +76,7 @@ function getFingerprint() {
 }
 
 function updateLoginButtons() {
-	var facebookStatus = $("#facebook-status-check");
-	var twitterStatus = $("#twitter-status-check");
-	var instagramStatus = $("#instagram-status-check");
+	facebook.updateCheckStatus();
 
-	var x = "./img/status/x.svg",
-		check = "./img/status/check.svg";
-
-	facebook.login();
-	facebookStatus.attr("src", check);
-
-	if (localStorage.getItem("twitterID")) twitterStatus.attr("src", check);
+	twitter.updateCheckStatus();
 }

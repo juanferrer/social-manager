@@ -37,6 +37,14 @@ class Facebook {
 	post() {
 		FB.api(`/${facebook.userId}/feed`, "post", { message: $("#publish-textarea").val(), access_token: facebook.accessToken });
 	}
+
+	updateCheckStatus() {
+		FB.getLoginStatus(response => {
+			if (response.status === "connected") {
+				$("#facebook-status-check").attr("src", "./img/status/check.svg");
+			}
+		});
+	}
 }
 
 

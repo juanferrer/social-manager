@@ -42,4 +42,10 @@ class Twitter {
 			console.log(r);
 		});
 	}
+
+	updateCheckStatus() {
+		if (localStorage.getItem("twitterID")) {
+			$("#twitter-status-check").attr("src", "./img/status/check.svg");
+		}
+	}
 }
