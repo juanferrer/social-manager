@@ -5,9 +5,6 @@ var twitter = new Twitter();
 
 feather.replace();
 
-if (document.referrer == "https://api.twitter.com/oauth/authorize") {
-}
-
 /* Event handlers */
 
 $("#right-button").click(() => {
@@ -63,4 +60,5 @@ function changeScreen() {
 
 function post() {
 	facebook.login(facebook.post);
+	twitter.post();
 }

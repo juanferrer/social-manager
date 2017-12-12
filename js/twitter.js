@@ -15,18 +15,7 @@ class Twitter {
 			data: { action: "login", id: "SOMETHING" },
 			type: "POST"
 		}).done(function (r) {
-			var loginWindow = window.open("", "", "width=550, height=615");
-
-			/*var timer = setInterval(() => {
-				if (loginWindow.location.href.startsWith("https://juanferrer.github.io/social-manager")) {
-					console.log(loginWindow.location.href);
-					//twitter.accessToken = loginWindow.location.href.lastIndexOf();
-					window.close();
-					clearInterval(timer);
-				}
-			}, 500);*/
-
-			loginWindow.location.href = r;
+			window.location.href = r;
 		});
 	}
 
@@ -40,6 +29,13 @@ class Twitter {
 	 * Format and post message
 	 * @param {post.js/post} postContent
 	 */
-	post(postContent) {
+	post() {
+		$.ajax({
+			url: "https://diabolic-straps.000webhostapp.com/social-manager/twitter.php",
+			data: { action: "post", id: "SOMETHING", message: $("#publish-textarea").val() },
+			type: "POST"
+		}).done(function (r) {
+			console.log(r);
+		});
 	}
 }
