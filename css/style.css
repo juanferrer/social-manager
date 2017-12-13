@@ -83,12 +83,41 @@ body {
 	z-index: 2;
 }
 
+.screen-change-button:hover {
+	animation-name: hover-change-screen-animation;
+	animation-duration: 0.8s;
+	animation-iteration-count: infinite;
+}
+
 #right-button {
 	right: 10px;
+	--first: 5px;
+	--second: -5px;
 }
 
 #left-button {
 	left: 10px;
+	--first: -5px;
+	--second: 5px;
+}
+
+@keyframes hover-change-screen-animation {
+	0% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+	50% {
+		transform: translateX(var(--first));
+		opacity: 0;
+	}
+	51% {
+		transform: translateX(var(--second));
+		opacity: 0;
+	}
+	100% {
+		transform: translateX(0px);
+		opacity: 1;
+	}
 }
 
 #publish-textarea {
