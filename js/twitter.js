@@ -2,8 +2,6 @@
 
 class Twitter {
 	constructor() {
-		this.userId = "";
-		this.accessToken = "";
 	}
 
 	/**
@@ -43,8 +41,12 @@ class Twitter {
 		});
 	}
 
+	isLoggedIn() {
+		return localStorage.getItem("twitterID");
+	}
+
 	updateCheckStatus() {
-		if (localStorage.getItem("twitterID")) {
+		if (this.isLoggedIn()) {
 			$("#twitter-status-check").attr("src", "./img/status/check.svg");
 		}
 	}

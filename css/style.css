@@ -58,6 +58,7 @@ body {
 	border-width: 2px;
 	border-color: transparent;
 	transition: all 0.2s ease-in-out;
+	cursor: pointer;
 }
 
 .social-network-image:hover {
@@ -81,6 +82,7 @@ body {
 .screen-change-button {
 	position: absolute;
 	z-index: 2;
+	cursor: pointer;
 }
 
 .screen-change-button:hover {
@@ -160,6 +162,7 @@ body {
 #publish-button {
 	background-color: var(--primary-color);
 	border-width: 0px;
+	cursor: pointer;
 }
 
 #publish-button:hover {

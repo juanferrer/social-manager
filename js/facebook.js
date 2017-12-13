@@ -26,6 +26,8 @@ class Facebook {
 	 */
 	logout() {
 		FB.logout(function (response) {
+			facebook.userId = "";
+			facebook.accessToken = "";
 			console.log(response);
 		});
 	}
@@ -36,6 +38,10 @@ class Facebook {
 	 */
 	post() {
 		FB.api(`/${facebook.userId}/feed`, "post", { message: $("#publish-textarea").val(), access_token: facebook.accessToken });
+	}
+
+	isLoggedIn() {
+		return this.userId !== "";
 	}
 
 	updateCheckStatus() {

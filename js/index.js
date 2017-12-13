@@ -27,11 +27,19 @@ $("#left-button").click(() => {
 });
 
 $("#facebook-button").click(() => {
-	facebook.login();
+	if (facebook.isLoggedIn()) {
+		facebook.logout();
+	} else {
+		facebook.login();
+	}
 });
 
 $("#twitter-button").click(() => {
-	twitter.login();
+	if (twitter.isLoggedIn()) {
+		twitter.logout();
+	} else {
+		twitter.login();
+	}
 });
 
 $("#instagram-button").click(() => {
