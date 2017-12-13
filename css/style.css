@@ -56,6 +56,11 @@ body {
 	border-color: var(--highlight-color);
 }
 
+.disabled.social-network-image {
+	opacity: 0.3;
+	pointer-events: none;
+}
+
 .social-network-state {
 	width: 100px;
 	height: 100px;
@@ -164,5 +169,15 @@ input[type='checkbox']:checked {
 }
 
 input[type='checkbox']:checked:after {
+	left: 45%;
+}
+
+input[type='checkbox']:disabled {
+	opacity: 0.5;
+	pointer-events: none;
+	background-color: #ccc;
+}
+
+input[type='checkbox']:disabled:after {
 	left: 45%;
 }
