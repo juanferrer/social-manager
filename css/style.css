@@ -1,6 +1,11 @@
 :root {
-	--main-color: #000;
-	--highlight-color: #00F;
+	--black: #4e4e4e;
+	--gray: #a9a9a9;
+	--light-gray: #ccc;
+	--primary-color: #009688;
+	--highlight-color: #4DB6AC;
+	--light-color: #eef8f8;
+	--white: #fff;
 }
 
 body {
@@ -20,6 +25,9 @@ body {
 }
 
 .main-screen {
+	border-color: var(--gray);
+	border-width: 2px;
+	border-style: solid;
 	max-width: 800px;
 	max-height: 600px;
 	width: 80vw;
@@ -27,7 +35,7 @@ body {
 	min-width: 400px;
 	min-height: 300px;
 	border-radius: 5px;
-	background-color: rgb(225, 232, 238);
+	background-color: var(--light-color);
 	padding: 45px;
 	/* This allows the inner elements to have absolute positions relative to this element*/
 	position: relative;
@@ -91,7 +99,7 @@ body {
 	resize: none;
 	border-radius: 5px;
 	border-width: 2px;
-	color: #4e4e4e;
+	color: var(--black);
 	padding: 10px;
 	font-family: 'Ubuntu', sans-serif;
 }
@@ -120,6 +128,15 @@ body {
 	animation-duration: 0.8s;
 }
 
+#publish-button {
+	background-color: var(--primary-color);
+	border-width: 0px;
+}
+
+#publish-button:hover {
+	background-color: var(--highlight-color);
+}
+
 #network-checkbox-container {
 	padding: 0;
 }
@@ -135,7 +152,7 @@ input[type='checkbox'] {
 	width: 36px;
 	height: 16px;
 	border-radius: 3px;
-	box-shadow: inset 0 1px 4px rgba(0, 0, 0, .2);
+	/* box-shadow: inset 0 1px 4px rgba(0, 0, 0, .2); */
 	cursor: pointer;
 	/* position: relative; */
 	transition: background-color 0.5s;
@@ -145,27 +162,27 @@ input[type='checkbox']:after {
 	content: "";
 	display: block;
 	position: absolute;
-	top: 1px;
+	top: 0;
 	left: 0;
 	width: 45%;
-	height: 70%;
-	background-color: #fdfdfd;
+	height: 85%;
 	margin: 4%;
 	border-radius: 3px;
-	box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
-	background: rgb(255, 255, 255);
-	background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(243, 243, 243, 1) 100%);
+	/* box-shadow: 0 1px 2px rgba(0, 0, 0, .2); */
+	background: var(--white);
+	/*background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(243, 243, 243, 1) 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(243, 243, 243, 1)));
 	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(243, 243, 243, 1) 100%);
 	background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(243, 243, 243, 1) 100%);
 	background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(243, 243, 243, 1) 100%);
-	background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(243, 243, 243, 1) 100%);
+	background: linear-gradient(to bottom, var(--white) 0%, var(--light-color) 100%);*/
+	background-color: var(--white);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f3f3f3', GradientType=0);
 	transition: .2s all;
 }
 
 input[type='checkbox']:checked {
-	background-color: #79d122;
+	background-color: var(--highlight-color);
 }
 
 input[type='checkbox']:checked:after {
