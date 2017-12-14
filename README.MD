@@ -1,4 +1,4 @@
-#### Social Manager
+# Social Manager
 
 The intention of this project is to provide people with a way to post the same content (promotional material mainly) to multiple social networks without the hassle of individually login in and posting to each one.
 
