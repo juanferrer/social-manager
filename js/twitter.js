@@ -25,6 +25,7 @@ class Twitter {
 	 */
 	logout() {
 		localStorage.removeItem("twitterID");
+		this.updateCheckStatus();
 	}
 
 	/**
