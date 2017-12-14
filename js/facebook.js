@@ -29,7 +29,7 @@ class Facebook {
 			facebook.userId = "";
 			facebook.accessToken = "";
 			console.log(response);
-			this.updateCheckStatus();
+			facebook.updateCheckStatus();
 		});
 	}
 
