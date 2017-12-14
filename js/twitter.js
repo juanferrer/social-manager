@@ -48,6 +48,8 @@ class Twitter {
 	updateCheckStatus() {
 		if (this.isLoggedIn()) {
 			$("#twitter-status-check").attr("src", "./img/status/check.svg");
+		} else {
+			$("#twitter-status-check").attr("src", "./img/status/x.svg");
 		}
 	}
 }

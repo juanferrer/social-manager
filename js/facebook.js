@@ -34,7 +34,6 @@ class Facebook {
 
 	/**
 	 * Format and post message
-	 * @param {post.js/post} postContent
 	 */
 	post() {
 		FB.api(`/${facebook.userId}/feed`, "post", { message: $("#publish-textarea").val(), access_token: facebook.accessToken });
@@ -48,8 +47,10 @@ class Facebook {
 		FB.getLoginStatus(response => {
 			if (response.status === "connected") {
 				$("#facebook-status-check").attr("src", "./img/status/check.svg");
-			} else if (response.status === "unknown") {
+			}/* else if (response.status === "unknown") {
 				facebook.login(facebook.updateCheckStatus);
+			}*/else {
+				$("#facebook-status-check").attr("src", "./img/status/x.svg");
 			}
 		});
 	}
