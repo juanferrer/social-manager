@@ -8,12 +8,12 @@ require 'twitteroauth/autoload.php';
 
 use Abraham\TwitterOAuth\TwitterOAuth;
 
-$CONSUMER_KEY = 'omHu0C1KXMXtOW6se9WEIgiA0';
-$CONSUMER_SECRET = 'BCiPqZhVV3LXQzeOn4p4bKmwNJXCJGelW4Cfm7j8x508fcaAFc';
+$CONSUMER_KEY = 'CONSUMER_KEY';
+$CONSUMER_SECRET = 'CONSUMER_SECRET';
 
 $SQL_SERVER = 'localhost';
 $SQL_USER = 'id2777537_social_manager';
-$SQL_PASSWORD = 'm794ja!2Y5C!';
+$SQL_PASSWORD = 'DB_PASSWORD';
 $SQL_DATABASE = 'id2777537_twitter_logins';
 
 $OAUTH_CALLBACK = 'https://diabolic-straps.000webhostapp.com/social-manager/twitter.php';
@@ -36,7 +36,6 @@ if (!empty($_POST['action'])) {
             break;
     }
 } else if (!empty($_GET['oauth_verifier'])) {
-    // $link = mysqli_connect('localhost', 'id2777537_social_manager', 'm794ja!2Y5C!', 'id2777537_twitter_logins');
     $link = mysqli_connect($SQL_SERVER, $SQL_USER, $SQL_PASSWORD, $SQL_DATABASE);
     if (!$link) {
         die('Server error');
@@ -59,7 +58,6 @@ function login($id)
 {
     global $CONSUMER_KEY, $CONSUMER_SECRET, $SQL_SERVER, $SQL_USER, $SQL_PASSWORD, $SQL_DATABASE, $OAUTH_CALLBACK;
 
-    //$link = mysqli_connect('localhost', 'id2777537_social_manager', 'm794ja!2Y5C!', 'id2777537_twitter_logins') or die("Error");
     $link = mysqli_connect($SQL_SERVER, $SQL_USER, $SQL_PASSWORD, $SQL_DATABASE) or die("Error");
 
     $oauth = [];
