@@ -1,4 +1,4 @@
-/* globals FB, facebook , $*/
+/* globals FB, facebook $*/
 
 class Facebook {
 	constructor() {
@@ -37,7 +37,17 @@ class Facebook {
 	 * Format and post message
 	 */
 	post() {
-		FB.api(`/${facebook.userId}/feed`, "post", { message: $("#publish-textarea").val(), access_token: facebook.accessToken });
+		// Look for an URL and remove it
+		const regex = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9]\.[^\s]{2,})/;
+		let text = $("#publish-textarea").val();
+		let message = text.replace(regex, "").trim();
+		let link = text.match(regex) || [""];
+
+		FB.api(`/${facebook.userId}/feed`, "post", {
+			access_token: facebook.accessToken,
+			message: message,
+			link: link[0]
+		});
 	}
 
 	isLoggedIn() {
