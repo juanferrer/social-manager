@@ -6,8 +6,7 @@ At the moment, this is the state of the following social network's implementatio
 
 - [X] Facebook: Basic posting.
 - [X] Twitter: Basic posting.
-- [ ] Instagram: Cannot upload pictures using the [Instagram API](https://www.instagram.com/developer/).
+- [ ] Instagram: Cannot upload pictures using the [Instagram API](https://www.instagram.com/developer/) (**Update**: only for [Business Accounts](https://developers.facebook.com/docs/instagram-api#limitations)).
 - [ ] Pinterest: On development.
 - [ ] Reddit: Being considered.
-- [ ] Google+: Being considered.
 - [ ] Tumblr: Being considered.
